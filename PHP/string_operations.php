@@ -1,14 +1,32 @@
 <!-- 5. String Operations -->
 <?php
-$text = "Hello, PHP World!";
+// -----------------------------
+// String Operations in PHP
+// -----------------------------
 
-// Length of string
-echo "Length: " . strlen($text) . "<br>";
+$text = "Hello, Ramsharan! Welcome to PHP Programming.";
 
-// Substring
-echo "Substring: " . substr($text, 7, 3) . "<br>";
+// 1. Length of the string
+$length = strlen($text); // strlen() returns the number of characters
+echo "<strong>Original String:</strong> $text<br>";
+echo "Length of the string: $length<br><br>";
 
-// String replacement
-$newText = str_replace("PHP", "Programming", $text);
-echo "Replaced string: " . $newText . "<br>";
+// 2. Extracting substring
+$substring1 = substr($text, 7, 9); // Start at index 7, length 9
+$substring2 = substr($text, -16, 11); // Start 16 chars from end, length 11
+echo "<strong>Substring Extraction:</strong><br>";
+echo "Substring (index 7, length 9): $substring1<br>";
+echo "Substring (16 from end, length 11): $substring2<br><br>";
+
+// 3. String replacement
+$replacedText = str_replace("PHP Programming", "Web Development", $text);
+echo "<strong>String Replacement:</strong><br>";
+echo "After replacement: $replacedText<br><br>";
+
+// 4. Additional operations (optional)
+echo "<strong>Additional String Operations:</strong><br>";
+echo "Uppercase: " . strtoupper($text) . "<br>";
+echo "Lowercase: " . strtolower($text) . "<br>";
+echo "Word count: " . str_word_count($text) . "<br>";
 ?>
+

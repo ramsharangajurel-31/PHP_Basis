@@ -1,31 +1,64 @@
 <!-- 3. Decision Making: if-else and switch-case -->
  <?php
-$marks = 85;
+// -----------------------------
+// Example: Grading System
+// -----------------------------
 
-// if-else
-if ($marks >= 90) {
-    echo "Grade: A<br>";
-} elseif ($marks >= 75) {
-    echo "Grade: B<br>";
-} elseif ($marks >= 60) {
-    echo "Grade: C<br>";
+$studentName = "Ramsharan";
+$marks = 82; // Marks out of 100
+
+echo "<h3>Student: $studentName</h3>";
+echo "Marks: $marks<br><br>";
+
+// -----------------------------
+// 1. Using if–else
+// -----------------------------
+echo "<strong>Grade using if–else:</strong><br>";
+
+if ($marks >= 90 && $marks <= 100) {
+    $grade = "A+";
+} elseif ($marks >= 80 && $marks < 90) {
+    $grade = "A";
+} elseif ($marks >= 70 && $marks < 80) {
+    $grade = "B";
+} elseif ($marks >= 60 && $marks < 70) {
+    $grade = "C";
+} elseif ($marks >= 50 && $marks < 60) {
+    $grade = "D";
 } else {
-    echo "Grade: F<br>";
+    $grade = "F";
 }
 
-// switch-case
-$day = 3;
-switch ($day) {
-    case 1:
-        echo "Monday<br>";
+echo "Grade: $grade<br><br>";
+
+// -----------------------------
+// 2. Using switch-case
+// -----------------------------
+echo "<strong>Grade using switch-case:</strong><br>";
+
+// Convert marks into a "tens" value for switch
+$tens = (int)($marks / 10);
+
+switch ($tens) {
+    case 10:
+    case 9:
+        $gradeSwitch = "A+";
         break;
-    case 2:
-        echo "Tuesday<br>";
+    case 8:
+        $gradeSwitch = "A";
         break;
-    case 3:
-        echo "Wednesday<br>";
+    case 7:
+        $gradeSwitch = "B";
+        break;
+    case 6:
+        $gradeSwitch = "C";
+        break;
+    case 5:
+        $gradeSwitch = "D";
         break;
     default:
-        echo "Another day<br>";
+        $gradeSwitch = "F";
 }
+
+echo "Grade: $gradeSwitch<br>";
 ?>
