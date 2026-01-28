@@ -1,0 +1,2 @@
+Using fopen to write this line.
+Appending this line using fopen.
