@@ -1,0 +1,21 @@
+<?php
+include 'db.php';
+
+$id = $_GET['id'];
+$result = $conn->query("SELECT * FROM students WHERE id=$id");
+$row = $result->fetch_assoc();
+?>
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Edit Student</h2>
+<form method="post" action="update.php">
+    <input type="hidden" name="id" value="<?= $row['id'] ?>">
+    Name: <input type="text" name="name" value="<?= $row['name'] ?>" required><br><br>
+    Email: <input type="email" name="email" value="<?= $row['email'] ?>" required><br><br>
+    Age: <input type="number" name="age" value="<?= $row['age'] ?>" required><br><br>
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>
